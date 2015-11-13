@@ -2,15 +2,25 @@
 	// Set attrib search terms
 	var attribs = [];
 
-	if ("angular" in window) {
-		attribs = ["ng-show", "ng-repeat"];
+	libs = {
+		"angular": {
+			"env": "angular",
+			"script": ["ng-show", "ng-repeat"]
+		},
+		"react": {
+			"env": "React",
+			"script": ["data-reactid"]
+		}
 	}
-	if ("React" in window) {
-		attribs = ["data-reactid"];
+
+	for (var lib in libs) {
+		if (libs[lib].env in window) {
+			attribs = libs[lib].script;
+		}
 	}
 
 	// Append CSS styles
-	var cssText = ".rale-overlay { background-color: rgba(255,0,0,0.1); }";
+	var cssText = ".dwy-overlay { background-color: rgba(255,0,0,0.1); }";
 	var css = document.createElement("style");
 	css.type = "text/css";
 	if ("textContent" in css) {
@@ -22,12 +32,12 @@
 	document.body.appendChild(css);
 
 	// Traverse DOM and highlight matching elements
-	var nodes = document.getElementsByTagName("*");
+	var nodes = document.body.getElementsByTagName("*");
 
 	for (var i = 0; i < nodes.length; i++) {
 		for (var j = 0; j < attribs.length; j++) {
 			if (nodes[i].getAttribute(attribs[j]) != null)
-				nodes[i].classList.add("rale-overlay");
+				nodes[i].classList.add("dwy-overlay");
 		}
 	}
 })();
