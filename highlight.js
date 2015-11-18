@@ -5,7 +5,7 @@
 	libs = {
 		"angular": {
 			"env": "angular",
-			"script": ["ng-show", "ng-repeat"]
+			"script": ["ng-show", "ng-repeat", "ng-include"]
 		},
 		"react": {
 			"env": "React",
@@ -20,7 +20,7 @@
 	}
 
 	// Append CSS styles
-	var cssText = ".dwy-overlay { background-color: rgba(255,0,0,0.1); }";
+	var cssText = ".dwy-overlay { background-color: rgba(255,0,0,0.1); outline: 2px red solid; outline-offset: -2px; }";
 	var css = document.createElement("style");
 	css.type = "text/css";
 	if ("textContent" in css) {
