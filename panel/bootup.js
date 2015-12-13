@@ -9,7 +9,11 @@
 
 	 const JQUERY_FILE = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js";
 
-	 const HTML_TEXT = "<h1>Hello</h1>"
+	 const HTML_TEXT = ""
+	 + "<ul>"
+	 + "	<li class='dwy-dom-node'>html</li>"
+	 + "	<li class='dwy-dom-node'>Test 1</li>"
+	 "	<li class='dwy-dom-node'>Test 1</li>"
 
 	 const HTML_NODE_CLASS = "dwy-panel";
 
